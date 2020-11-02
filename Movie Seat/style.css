@@ -65,7 +65,7 @@ body {
 
 .seat:not(.occupied):hover {
     cursor: pointer;
-    transform: scale(1.5);
+    transform: scale(1.25);
 }
 .showcase .seat:not(.occupied):hover {
     /* only hovered seats will scale up */
