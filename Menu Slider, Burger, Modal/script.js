@@ -10,4 +10,11 @@ toggle.addEventListener('click', () => {
 })
 
 // show modal
-open.addEventListener()
+open.addEventListener('click', () => modal.classList.add('show-modal'));
+
+// Hide modal
+close.addEventListener('click', () => modal.classList.remove('show-modal'));
+
+// hide modal on click out
+window.addEventListener('click', e => e.target == modal ?
+        modal.classList.remove('show-modal') : false);
