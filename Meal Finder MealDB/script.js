@@ -8,14 +8,29 @@ const search = document.getElementById('search'),
 
 // Search meal and fetch API
 function searchMeal(e) {
-    //prevent usbmit to submit empty
+    //prevent submit to submit empty
     e.preventDefault();
 
+    // Clear single meal
+    single_mealEl.innerHTML = '';
+
+    //Get search term
+    const term = search.value;
     
+    // Check for empty
+    if (term.trim()) {
+        fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
+    } else {
+        alert('Please enter a search term');
+    }
 }
     
 
 
 
 // Even listeners
-    submit.addEventListener('submit', searchMeal);
+submit.addEventListener('submit', searchMeal);
