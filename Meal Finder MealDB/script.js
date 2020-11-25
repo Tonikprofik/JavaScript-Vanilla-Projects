@@ -45,9 +45,27 @@ function searchMeal(e) {
 
 
     } else {
-        alert('Please enter a search term');
+        //alert('Please enter a search term');
+        resultHeading.innerHTML = `<h2>Please enter a search term</h2>`
     }
 }
+
+// Fetch random meal from API
+function getRandomMeal() {
+    // clear meals and heading
+    mealsEl.innerHTML= '';
+    resultHeading.innerHTML='';
+
+    fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
+        .then(res => res.json())
+        .then(data => {
+            const meal = data.meals[0];
+
+            addMealToDOM(meal);
+        })
+
+}
+
 
 // Fetch Meal by ID
 function getMealById(mealID){
@@ -99,6 +117,7 @@ function addMealToDOM(meal){
 
 // Even listeners
 submit.addEventListener('submit', searchMeal);
+random.addEventListener('click', getRandomMeal);
 
 mealsEl.addEventListener('click', e => {
     // go through all child items
