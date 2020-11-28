@@ -3,7 +3,7 @@ const postsContainer = document.getElementById('posts-container'),
         filter = document.getElementById('filter');
 
 
-let limit = 4;
+let limit = 3;
 let page = 1;
 
 async function getPosts() {
