@@ -24,13 +24,15 @@ h1 {
 
 .filter-container {
     margin-top: 20px;
-    width:80vw;
+    width:70vw;
     max-width: 800px;
 }
 
 .filter {
     width: 100%;
     padding: 12px;
+    margin: 20px;
+    font-size: 16px;
 }
 
 .post {
@@ -76,7 +78,7 @@ h1 {
 }
 
 .loader {
-    /* opacity: 0; */
+    opacity: 0;
     display: flex;
     position: fixed;
     bottom: 50px;
